@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'image_proc/style.css' %}">
+    <title>Process Image</title>
+  </head>
+  <body>
+    <h1>Process Image</h1>
+    {% if processed_image_path %}
+    <img src="/media/processed_image.jpg" height="689" width="1003">
+    {% endif %}
+    <form action="{% url 'process_image' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="image">Choose an image:</label>
+      <input type="file" name="image" id="image" accept="image/*">
+      <br><br>
+      <input type="submit" value="Process Image">
+    </form>
+  </body>
+</html>

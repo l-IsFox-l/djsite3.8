@@ -1,0 +1,43 @@
+/* Set the background color to dark gray */
+body {
+  background-color: #1c1c1c;
+}
+
+/* Set the font color to light gray */
+body, h1, h2, h3, h4, h5, h6, p {
+  color: #dcdcdc;
+}
+
+/* Set the link color to light blue */
+a {
+  color: #00bfff;
+}
+
+/* Set the link hover color to white */
+a:hover {
+  color: #ffffff;
+}
+
+/* Set the color of form labels to light blue */
+label {
+  color: #00bfff;
+}
+
+/* Set the color of form inputs to light gray */
+input {
+   background-color: #0077cc;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Set the border color of form inputs to light blue */
+input:focus {
+  border-color: #00bfff;
+}
+
+/* Set the color of buttons to light blue */

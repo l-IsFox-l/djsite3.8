@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>360&deg; Camera Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{% static 'js/vr_view_test.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.137.1/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <form method="post" action="{% url 'process_panorama' %}">
+    {% csrf_token %}
+    <input type="submit" name="process_image" value="Process Image">
+    </form>
+    <input type = "button" onclick = "showBoxes()" value = "Show panorama with boxes">
+    <input type = "button" onclick = "hideBoxes()" value = "Show panorama without boxes">
+
+<script>
+function downloadExcel() {
+  var url = '/media/exel/words.xlsx'; // change this to the URL of your Excel file
+  var link = document.createElement('a');
+  link.href = url;
+  link.download = 'words.xlsx'; // change this to the filename you want to use
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
+
+</body>
+</html>
